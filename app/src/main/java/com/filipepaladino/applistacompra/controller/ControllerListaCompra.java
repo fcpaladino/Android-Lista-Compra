@@ -115,6 +115,7 @@ public class ControllerListaCompra extends SQLiteOpenHelper {
         item.setId(columnInt("id"));
         item.setNome(columnString("nome"));
         item.setValor(columnDouble("valor"));
+        item.setAtivo(columnInt("ativo"));
 
         return item;
     }
@@ -130,8 +131,9 @@ public class ControllerListaCompra extends SQLiteOpenHelper {
             do {
                 ModelListaCompra item = new ModelListaCompra();
                                  item.setId(columnInt("id"));
-                                 item.setNome(columnString("nome"));
-                                 item.setValor(columnDouble("valor"));
+                item.setNome(columnString("nome"));
+                item.setValor(columnDouble("valor"));
+                item.setAtivo(columnInt("ativo"));
 
 
                 retorno.add(item);

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
 xmlns:tools="http://schemas.android.com/tools"
 android:layout_width="match_parent"
 android:layout_height="match_parent"
@@ -12,13 +12,39 @@ tools:context=".HomeActivity">
 <Space
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_weight="0.08" />
+    android:layout_weight="0.08"
+    android:id="@+id/space" />
 
-<ListView
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Buscar"
+        android:id="@+id/button"
+        android:layout_gravity="right"
+        android:layout_weight="0.08"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <EditText
+        android:layout_width="240dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText"
+        android:layout_below="@+id/space"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_toLeftOf="@+id/button"
+        android:layout_toStartOf="@+id/button"
+        android:layout_alignBottom="@+id/button" />
+
+    <ListView
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="291dp"
     android:id="@+id/lsvListaCompra"
-    android:layout_gravity="center_horizontal"
-    android:layout_weight="0.08" />
+        android:layout_weight="0.76"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/button" />
 
-</LinearLayout>
+</RelativeLayout>

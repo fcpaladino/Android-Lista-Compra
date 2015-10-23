@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -63,10 +64,16 @@ public class AdapterListaCompra  extends BaseAdapter {
             holder.texto2       = (TextView) v.findViewById(R.id.texto2);
             holder.btnDeletar   = (Button) v.findViewById(R.id.btnItemDelete);
             holder.listItem     = (RelativeLayout) v.findViewById(R.id.listItem);
+            holder.checkbox     = (CheckBox) v.findViewById(R.id.chkItem);
 
             holder.itemId.setText( String.valueOf(item.getId()) );
             holder.texto1.setText( item.getNome() );
             holder.texto2.setText( String.valueOf(item.getValor()) );
+
+            if(item.getAtivo() == 1)
+                holder.checkbox.setChecked(true);
+            else
+                holder.checkbox.setChecked(false);
 
         } else {
             holder = (ViewHolder) v.getTag();
@@ -109,6 +116,7 @@ public class AdapterListaCompra  extends BaseAdapter {
         TextView texto1;
         TextView texto2;
         Button btnDeletar;
+        CheckBox checkbox;
         RelativeLayout listItem;
     }
 }
